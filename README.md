@@ -48,7 +48,8 @@ Kaboom! lepo-logout is removed!
 
 
 ### Credits :
-lepo-logout uses icons from Crystal Clear, GNOME, Human & Tango icon sets.
+- Crystal Clear, GNOME, Human & Tango icon sets for the icons.
+- Lennart Poettering for systemd & the name. lepo in the lepo-logout is a portmanteau of Lennart and Poettering.
 
 
 ### License :
