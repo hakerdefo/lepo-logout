@@ -1,31 +1,20 @@
 # lepo-logout
-
 lepo-logout is a lightweight, distribution agnostic utility for GNU/Linux systems that can,
 
-- Lock screen
+- Lock screen<sup>[1](#footnote)</sup>
 - Logout user
 - Suspend system
 - Reboot system
 - Shutdown system
 
-And lepo-logout doesn't require too many dependencies and/or resources to perform these tasks. lepo-logout doesn't even require ConsoleKit.
+And lepo-logout doesn't require too many dependencies and resources to perform these tasks. lepo-logout doesn't even require ConsoleKit.
 
 
 ### Dependencies :
+- YAD - YAD (Yet Another Display) is a program to display GTK+ dialogs. [YAD] is also known as Zenity on steroids. YAD is developed by Victor Ananjevsky. YAD is available in repositories of many current GNU/Linux distributions. If it is not available for installation via your distribution's package-manager you can download YAD from [SourceForge](https://sourceforge.net/projects/yad-dialog/) or [pkgs.org](http://pkgs.org/download/yad) or [UbuntuUpdates](http://www.ubuntuupdates.org/package_metas?exact_match=1&q=yad).
 
-- YAD - YAD (Yet Another Display) is a program to display GTK+ dialogs. [YAD] is available in repositories of many current GNU/Linux distributions. If it is not available for installation via your distribution's package-manager you can download YAD from the following websites,
 
- https://sourceforge.net/projects/yad-dialog/
- 
- http://pkgs.org/download/yad
- 
- http://www.ubuntuupdates.org/package_metas?exact_match=1&q=yad
- 
- YAD is also known as Zenity on steroids. YAD is developed by Victor Ananjevsky.
- 
- 
 ### Installation :
-
 Installing lepo-logout on any GNU/Linux system is very easy. Just download [lepo-logout] zip file, extract its contents into a directory of your choice, open that directory in your favorite terminal emulator and run these two commands,
 ```sh
 chmod 755 install-lepo-logout
@@ -37,11 +26,46 @@ Voila! lepo-logout is installed!
 
 
 ### Usage :
-
 lepo-logout will be available under either "Preferences" or "System Tools" category of any Freedesktop standards compliant menu. You can easily launch lepo-logout by clicking on its menu entry. You can also run lepo-logout via your favorite terminal emulator by entering,
 ```sh
 lepo-logout
 ```
-You can also add lepo-logout to the panel for easy access.
+You can also add lepo-logout to the panel for quick access. Please consult your panel's documentation on adding custom launchers. lepo-logout's desktop file is located at "/usr/share/applications/lepo-logout.desktop".
 
+
+### Screenshot :
 Here is a screenshot of lepo-logout just in case you were interested!
+
+![alt text](http://i.imgur.com/FC793anl.png "Click to view the original image")
+
+
+### Removal :
+Removing lepo-logout from your system is just as easy. Open your favorite terminal emulator and run,
+```sh
+sudo remove-lepo-logout
+```
+Kaboom! lepo-logout is removed!
+
+
+### Credits :
+lepo-logout uses icons from Crystal Clear, GNOME, Human & Tango icon sets.
+
+
+### License :
+This work (<span property="dct:title">lepo-logout</span>, by [<span property="dct:title">hakerdefo</span>](https://github.com/hakerdefo/lepo-logout)), identified by [<span property="dct:title">hakerdefo</span>](https://hakerdefo.blogspot.com), is released under [University of Illinois Open Source License](http://otm.illinois.edu/disclose-protect/illinois-open-source-license "University of Illinois/NCSA Open Source License").
+
+
+#
+<a name="footnote">1</a>. Any one of the following will be required for the "Lock Screen" function,
+
+- xtrlock
+- i3lock
+- slock
+- light-locker
+- xscreensaver
+- gnome-screensaver
+- dm-tool
+
+If none of the above is installed, the "Lock Screen" button won't be visible in lepo-logout.
+[YAD]:https://sourceforge.net/projects/yad-dialog/
+[lepo-logout]:https://github.com/hakerdefo/lepo-logout/archive/master.zip
