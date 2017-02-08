@@ -15,7 +15,7 @@ And lepo-logout doesn't require too many dependencies and resources to perform t
 
 
 ### Installation :
-Installing lepo-logout on any GNU/Linux system is very easy. Just download [lepo-logout] zip file, extract its contents into a directory of your choice, open that directory in your favorite terminal emulator and run these two commands,
+Installing lepo-logout on any GNU/Linux system is very easy. Just download [lepo-logout-master] zip file, extract its contents into a directory of your choice, open that directory in your favorite terminal emulator and run these two commands,
 ```sh
 chmod 755 install-lepo-logout
 ```
@@ -69,4 +69,4 @@ This work (<span property="dct:title">lepo-logout</span>, by [<span property="dc
 
 If none of the above is installed, the "Lock Screen" button won't be visible in lepo-logout.
 [YAD]:https://sourceforge.net/projects/yad-dialog/
-[lepo-logout]:https://github.com/hakerdefo/lepo-logout/archive/master.zip
+[lepo-logout-master]:https://github.com/hakerdefo/lepo-logout/archive/master.zip
