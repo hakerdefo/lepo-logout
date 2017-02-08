@@ -1,0 +1,110 @@
+#!/usr/bin/env bash
+type lepo-logout >/dev/null 2>&1
+RETVAL=$?
+if [[ "$RETVAL" == 0 ]]; then
+printf "\033c"
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+echo -e '\e[38;5;82m'"\"lepo-logout\" is already installed."
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+tput sgr0
+exit 1
+fi
+if ! [[ "$EUID" == 0 ]]; then
+printf "\033c"
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+echo -e '\e[38;5;82m'"You must run the \"install-lepo-logout\" script using \"sudo\" or as the root user."
+echo -e '\e[38;5;82m'"Hint Hint Hint = \"sudo ./install-lepo-logout\" or \"su -c ./install-lepo-logout\"."
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+tput sgr0
+exit 1
+fi
+if ! [[ -f lepo-logout.tar.gz ]]; then
+printf "\033c"
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+echo -e '\e[38;5;82m'"Required archive \"lepo-logout.tar.gz\" is missing or unavailable."
+echo -e '\e[38;5;82m'"Can not continue the installation process. Aborting the install."
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+tput sgr0
+exit 1
+fi
+type yad >/dev/null 2>&1 || { printf "\033c"; echo -e ""; for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; echo -e ""; echo -e '\e[38;5;82m'"Required program dependency \"yad\" is not installed"; echo -e '\e[38;5;82m'"\"yad\" is available in repositories of some distros"; echo -e '\e[38;5;82m'"If \"yad\" is unavailable in your linux distribution"; echo -e '\e[38;5;82m'"You can easily download \"yad\" from following links"; echo -e ""; echo -e '\e[38;5;82m'"https://sourceforge.net/projects/yad-dialog/"; echo -e '\e[38;5;82m'"http://pkgs.org/download/yad"; echo -e '\e[38;5;82m'"http://www.ubuntuupdates.org/package_metas?exact_match=1&q=yad"; echo -e ""; for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; echo -e ""; tput sgr0; exit 1; }
+ctl_system=$(which systemctl)
+stat_syst=$("$ctl_system" is-system-running)
+if ! [[ "$stat_syst" =~ running ]]; then
+if ! [[ "$ctl_system" =~ -\.mount ]]; then
+strings /sbin/init | grep -q "/lib/systemd" >/dev/null 2>&1
+RETVAL=$?
+if ! [[ "$RETVAL" == 0 ]]; then
+type systemctl >/dev/null 2>&1
+RETVAL=$?
+if ! [[ "$RETVAL" == 0 ]]; then
+printf "\033c"
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+echo -e '\e[38;5;82m'"\"lepo-logout\" is designed to work on system using \"systemd\"."
+echo -e '\e[38;5;82m'"Current system is not using \"systemd\". Aborting the install."
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+tput sgr0
+exit 1
+fi
+fi
+fi
+fi
+work_dir=$(mktemp -d)
+tar -xzf lepo-logout.tar.gz --directory "$work_dir"
+cd "$work_dir" || { "$pmpm_rm" -rf "$work_dir"; printf "\033c"; echo -e ""; for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; echo -e ""; echo -e '\e[38;5;82m'"Something went wrong. Aborting the install."; echo -e ""; for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; echo -e ""; tput sgr0; exit 1; }
+pmpm_rm=$(which rm)
+pmpm_cp=$(which cp)
+test -d "/usr/bin" || mkdir -p "/usr/bin"
+"$pmpm_cp" remove-lepo-logout "/usr/bin/"
+chmod 755 "/usr/bin/remove-lepo-logout"
+"$pmpm_cp" lepo-logout "/usr/bin/"
+chmod 755 "/usr/bin/lepo-logout"
+"$pmpm_cp" lepo-logout.desktop "/usr/share/applications/"
+chmod 644 "/usr/share/applications/lepo-logout.desktop"
+"$pmpm_cp" logout_attention.png "/usr/share/pixmaps/"
+"$pmpm_cp" logout_cancel.png "/usr/share/pixmaps/"
+"$pmpm_cp" logout_error.png "/usr/share/pixmaps/"
+"$pmpm_cp" logout_exit.png "/usr/share/pixmaps/"
+"$pmpm_cp" logout_info.png "/usr/share/pixmaps/"
+"$pmpm_cp" logout_lock.png "/usr/share/pixmaps/"
+"$pmpm_cp" logout_no.png "/usr/share/pixmaps/"
+"$pmpm_cp" logout_ok.png "/usr/share/pixmaps/"
+"$pmpm_cp" logout_password.png "/usr/share/pixmaps/"
+"$pmpm_cp" logout_question.png "/usr/share/pixmaps/"
+"$pmpm_cp" logout_reboot.png "/usr/share/pixmaps/"
+"$pmpm_cp" logout_shutdown.png "/usr/share/pixmaps/"
+"$pmpm_cp" logout_suspend.png "/usr/share/pixmaps/"
+"$pmpm_cp" logout_window.svg "/usr/share/pixmaps/"
+"$pmpm_cp" pm-logout.svg "/usr/share/pixmaps/"
+cd "$HOME" || { "$pmpm_rm" -rf "$work_dir"; "$pmpm_rm" -f "/usr/bin/remove-lepo-logout"; "$pmpm_rm" -f "/usr/bin/lepo-logout"; "$pmpm_rm" -f "/usr/share/applications/lepo-logout.desktop"; "$pmpm_rm" -f "/usr/share/pixmaps/logout_attention.png"; "$pmpm_rm" -f "/usr/share/pixmaps/logout_cancel.png"; "$pmpm_rm" -f "/usr/share/pixmaps/logout_error.png"; "$pmpm_rm" -f "/usr/share/pixmaps/logout_exit.png"; "$pmpm_rm" -f "/usr/share/pixmaps/logout_info.png"; "$pmpm_rm" -f "/usr/share/pixmaps/logout_lock.png"; "$pmpm_rm" -f "/usr/share/pixmaps/logout_no.png"; "$pmpm_rm" -f "/usr/share/pixmaps/logout_ok.png"; "$pmpm_rm" -f "/usr/share/pixmaps/logout_password.png"; "$pmpm_rm" -f "/usr/share/pixmaps/logout_question.png"; "$pmpm_rm" -f "/usr/share/pixmaps/logout_reboot.png"; "$pmpm_rm" -f "/usr/share/pixmaps/logout_shutdown.png"; "$pmpm_rm" -f "/usr/share/pixmaps/logout_suspend.png"; "$pmpm_rm" -f "/usr/share/pixmaps/logout_window.svg"; "$pmpm_rm" -f "/usr/share/pixmaps/pm-logout.svg"; printf "\033c"; echo -e ""; for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; echo -e '\e[38;5;82m'"Something went wrong. Aborting the install."; echo -e ""; for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; echo -e ""; tput sgr0; exit 1; }
+printf "\033c"
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+echo -e '\e[38;5;82m'"Installation of \"lepo-logout\" is successfull."
+echo -e '\e[38;5;82m'"You can run \"lepo-logout\" from the main menu."
+echo -e '\e[38;5;82m'"\"lepo-logout\" would be situated under either,"
+echo -e '\e[38;5;82m'"\"System Tools\" or \"Preferences\" in main menu."
+echo -e '\e[38;5;82m'"You can also launch \"lepo-logout\" by running,"
+echo -e '\e[38;5;82m'"\"lepo-logout\" command from terminal emulator."
+echo -e ""
+{ for i in {16..51} {51..16}; do echo -en "\e[38;5;${i}m#\e[0m"; done; echo; }
+echo -e ""
+tput sgr0
+exit 0
