@@ -1,5 +1,5 @@
 # lepo-logout
-lepo-logout is a lightweight, distribution agnostic utility for GNU/Linux systems that can,
+**lepo-logout** is a lightweight, distribution agnostic utility for GNU/Linux systems that can,
 
 - Lock screen<sup>[1](#footnote)</sup>
 - Logout user
@@ -7,7 +7,7 @@ lepo-logout is a lightweight, distribution agnostic utility for GNU/Linux system
 - Reboot system
 - Shutdown system
 
-And lepo-logout doesn't require too many dependencies and resources to perform these tasks. lepo-logout doesn't even require ConsoleKit.
+And **lepo-logout** doesn't require too many dependencies and resources to perform these tasks. **lepo-logout** doesn't even require ConsoleKit.
 
 
 ### Dependencies :
@@ -15,41 +15,41 @@ And lepo-logout doesn't require too many dependencies and resources to perform t
 
 
 ### Installation :
-Installing lepo-logout on any GNU/Linux system is very easy. Just download [lepo-logout-master] zip file, extract its contents into a directory of your choice, open that directory in your favorite terminal emulator and run these two commands,
+Installing **lepo-logout** on any GNU/Linux system is very easy. Just download [lepo-logout-master] zip file, extract its contents into a directory of your choice, open that directory in your favorite terminal emulator and run these two commands,
 ```sh
 chmod 755 install-lepo-logout
 ```
 ```sh
 sudo ./install-lepo-logout
 ```
-Voila! lepo-logout is installed!
+Voila! **lepo-logout** is installed!
 
 
 ### Usage :
-lepo-logout will be available under either "Preferences" or "System Tools" category of any Freedesktop standards compliant menu. You can easily launch lepo-logout by clicking on its menu entry. You can also run lepo-logout via your favorite terminal emulator by entering,
+**lepo-logout** will be available under either **Preferences** or **System Tools** category of any Freedesktop standards compliant menu. You can easily launch **lepo-logout** by clicking on its menu entry. You can also run **lepo-logout** via your favorite terminal emulator by entering,
 ```sh
 lepo-logout
 ```
-You can also add lepo-logout to the panel for quick access. Please consult your panel's documentation on adding custom launchers. lepo-logout's desktop file is located at "/usr/share/applications/lepo-logout.desktop".
+You can also add **lepo-logout** to the panel for quick access. Please consult your panel's documentation on adding custom launchers. **lepo-logout**'s desktop file is located at **/usr/share/applications/lepo-logout.desktop**.
 
 
 ### Screenshot :
-Here is a screenshot of lepo-logout just in case you were interested!
+Here is a screenshot of **lepo-logout** just in case you were interested!
 
 ![alt text](http://i.imgur.com/FC793anl.png "Click to view the original image")
 
 
 ### Removal :
-Removing lepo-logout from your system is just as easy. Open your favorite terminal emulator and run,
+Removing **lepo-logout** from your system is just as easy. Open your favorite terminal emulator and run,
 ```sh
 sudo remove-lepo-logout
 ```
-Kaboom! lepo-logout is removed!
+Kaboom! **lepo-logout** is removed!
 
 
 ### Credits :
 - Crystal Clear, GNOME, Human & Tango icon sets for the icons.
-- Lennart Poettering for systemd & the name. lepo in the lepo-logout is a portmanteau of Lennart and Poettering.
+- Lennart Poettering for systemd & the name. lepo in the **lepo-logout** is a portmanteau of Lennart and Poettering.
 
 
 ### License :
@@ -57,16 +57,16 @@ This work (<span property="dct:title">lepo-logout</span>, by [<span property="dc
 
 
 #
-<a name="footnote">1</a>. Any one of the following will be required for the "Lock Screen" function,
+<a name="footnote">1</a>. _Any one of the following will be required for the **Lock Screen** function,_
 
-- xtrlock
-- i3lock
-- slock
-- light-locker
-- xscreensaver
-- gnome-screensaver
-- dm-tool
+- _xtrlock_
+- _i3lock_
+- _slock_
+- _light-locker_
+- _xscreensaver_
+- _gnome-screensaver_
+- _dm-tool_
 
-If none of the above is installed, the "Lock Screen" button won't be visible in lepo-logout.
+_If none of the above is installed, the **Lock Screen** button won't be visible in **lepo-logout**._
 [YAD]:https://sourceforge.net/projects/yad-dialog/
 [lepo-logout-master]:https://github.com/hakerdefo/lepo-logout/archive/master.zip
