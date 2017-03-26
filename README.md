@@ -68,5 +68,6 @@ This work (<span property="dct:title">lepo-logout</span>, by [<span property="dc
 - _dm-tool_
 
 _If none of the above is installed, the **Lock Screen** button won't be visible in **lepo-logout**._
+
 [YAD]:https://sourceforge.net/projects/yad-dialog/
 [lepo-logout-master]:https://github.com/hakerdefo/lepo-logout/archive/master.zip
