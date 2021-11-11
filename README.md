@@ -47,6 +47,15 @@ sudo remove-lepo-logout
 Kaboom! **lepo-logout** is removed!
 
 
+### Support :
+
+If you like **lepo-logout**, please consider supporting it, even the smallest contribution goes a long way. It is quick & easy via PayPal, Buy Me a Coffee or Liberapay:  
+
+[![Support via PayPal](https://cdn.jsdelivr.net/gh/twolfson/paypal-github-button@1.0.0/dist/button.svg)](https://paypal.me/hakerdefo)  
+[!["Buy Me A Coffee"](https://user-images.githubusercontent.com/1376749/120938564-50c59780-c6e1-11eb-814f-22a0399623c5.png)](https://www.buymeacoffee.com/hakerdefo)  
+[![Support via Liberapay](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/hakerdefo/donate)  
+
+
 ### Credits :
 - Crystal Clear, GNOME, Human & Tango icon sets for the icons.
 - Lennart Poettering for systemd & the name. lepo in the **lepo-logout** is a portmanteau of Lennart and Poettering.
